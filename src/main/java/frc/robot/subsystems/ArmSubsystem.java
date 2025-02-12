@@ -16,18 +16,15 @@ import com.revrobotics.spark.config.SparkBaseConfig.IdleMode;
 /** Class to run the algae rollers over CAN */
 public class ArmSubsystem extends SubsystemBase {
   private final SparkMax armLeader;
-  private final SparkMax armFollower;
 
   public ArmSubsystem() {
     // Set up the roller motors as brushed motors
     armLeader = new SparkMax(ArmConstants.ARM_LEADER_ID, MotorType.kBrushed);
-    armFollower = new SparkMax(ArmConstants.ARM_FOLLOWER_ID, MotorType.kBrushed);
 
     // Set can timeout. Because this project only sets parameters once on
     // construction, the timeout can be long without blocking robot operation. Code
     // which sets or gets parameters during operation may need a shorter timeout.
     armLeader.setCANTimeout(250);
-    armFollower.setCANTimeout(250);
 
     // Create and apply configuration for roller motor. Voltage compensation helps
     // the roller behave the same as the battery
@@ -39,11 +36,6 @@ public class ArmSubsystem extends SubsystemBase {
     armConfig.inverted(false);
     armConfig.idleMode(IdleMode.kBrake);
 
-    armConfig.follow(armLeader);
-    armFollower.configure(armConfig, ResetMode.kResetSafeParameters, PersistMode.kPersistParameters);
-
-    armConfig.disableFollowerMode();
-    armConfig.inverted(true);
     armLeader.configure(armConfig, ResetMode.kResetSafeParameters, PersistMode.kPersistParameters);
 
   }

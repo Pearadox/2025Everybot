@@ -36,7 +36,6 @@ public final class Constants {
 
   public static final class ArmConstants {
     public static final int ARM_LEADER_ID = 9; // Values are placeholders currently
-    public static final int ARM_FOLLOWER_ID = 9;
     public static final int ARM_MOTOR_CURRENT_LIMIT = 80;
     public static final double ARM_MOTOR_VOLTAGE_COMP = 10;
     public static final double ARM_UP_VALUE = 0.7;
