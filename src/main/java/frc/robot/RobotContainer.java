@@ -83,9 +83,9 @@ public class RobotContainer {
 
     // before
     driverController.rightBumper()
-        .whileTrue(new RollerCommand(() -> RollerConstants.ROLLER_EJECT_VALUE, () -> 0, rollerSubsystem));
+        .whileTrue(new RollerCommand(() -> 0, () -> RollerConstants.ROLLER_INTAKE_VALUE, rollerSubsystem));
     driverController.rightTrigger(0.2)
-        .whileTrue(new RollerCommand(() -> 0, () -> RollerConstants.ROLLER_EJECT_VALUE, rollerSubsystem));
+        .whileTrue(new RollerCommand(() -> RollerConstants.ROLLER_EJECT_VALUE, () -> 0, rollerSubsystem));
 
     driverController.leftBumper()
         .whileTrue(new ArmCommand(() -> ArmConstants.ARM_UP_VALUE, () -> 0, armSubsystem));

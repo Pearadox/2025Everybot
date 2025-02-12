@@ -32,6 +32,7 @@ public final class Constants {
     public static final double ROLLER_MOTOR_VOLTAGE_COMP = 10;
     public static final double ROLLER_EJECT_VALUE = 0.2;
     public static final double ROLLER_EJECT_FAST_VALUE = 0.38;
+    public static final double ROLLER_INTAKE_VALUE = 0.5;
   }
 
   public static final class ArmConstants {
