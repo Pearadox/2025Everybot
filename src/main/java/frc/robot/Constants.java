@@ -18,16 +18,16 @@ package frc.robot;
  */
 public final class Constants {
   public static final class DriveConstants {
-    public static final int LEFT_LEADER_ID = 3; // Values are placeholders currently
-    public static final int LEFT_FOLLOWER_ID = 4;
-    public static final int RIGHT_LEADER_ID = 1;
-    public static final int RIGHT_FOLLOWER_ID = 2;
+    public static final int LEFT_LEADER_ID = 1;
+    public static final int LEFT_FOLLOWER_ID = 2;
+    public static final int RIGHT_LEADER_ID = 3;
+    public static final int RIGHT_FOLLOWER_ID = 4;
 
     public static final int DRIVE_MOTOR_CURRENT_LIMIT = 80;
   }
 
   public static final class RollerConstants {
-    public static final int ROLLER_MOTOR_ID = 5; // Values are placeholders currently
+    public static final int ROLLER_MOTOR_ID = 6;
     public static final int ROLLER_MOTOR_CURRENT_LIMIT = 80;
     public static final double ROLLER_MOTOR_VOLTAGE_COMP = 10;
     public static final double ROLLER_EJECT_VALUE = 0.2;
@@ -36,7 +36,7 @@ public final class Constants {
   }
 
   public static final class ArmConstants {
-    public static final int ARM_LEADER_ID = 9; // Values are placeholders currently
+    public static final int ARM_LEADER_ID = 5;
     public static final int ARM_MOTOR_CURRENT_LIMIT = 80;
     public static final double ARM_MOTOR_VOLTAGE_COMP = 10;
     public static final double ARM_UP_VALUE = 0.7;
@@ -44,7 +44,7 @@ public final class Constants {
   }
 
   public static final class ClimbConstants {
-    public static final int CLIMB_MOTOR_ID = 9; // Values are placeholders currently
+    public static final int CLIMB_MOTOR_ID = 7;
     public static final int CLIMB_MOTOR_CURRENT_LIMIT = 80;
     public static final double CLIMB_MOTOR_VOLTAGE_COMP = 10;
     public static final double CLIMB_VALUE = 0.7;
