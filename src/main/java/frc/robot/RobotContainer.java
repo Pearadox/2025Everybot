@@ -120,7 +120,7 @@ public class RobotContainer {
         rollerSubsystem));
 
     armSubsystem.setDefaultCommand(new ArmCommand(
-        () -> 0,
+        () -> 0.08,
         () -> 0,
         armSubsystem));
 
