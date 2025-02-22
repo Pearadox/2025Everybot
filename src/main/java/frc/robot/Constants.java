@@ -30,19 +30,18 @@ public final class Constants {
     public static final int ROLLER_MOTOR_ID = 6;
     public static final int ROLLER_MOTOR_CURRENT_LIMIT = 80;
     public static final double ROLLER_MOTOR_VOLTAGE_COMP = 10;
-    public static final double ROLLER_EJECT_VALUE = 0.2;
-    public static final double ROLLER_EJECT_FAST_VALUE = 0.38;
-    public static final double ROLLER_INTAKE_VALUE = 0.5;
+    public static final double ROLLER_EJECT_VALUE = 0.4;
+    public static final double ROLLER_INTAKE_VALUE = 0.6;
   }
 
   public static final class ArmConstants {
     public static final int ARM_LEADER_ID = 5;
     public static final int ARM_MOTOR_CURRENT_LIMIT = 80;
     public static final double ARM_MOTOR_VOLTAGE_COMP = 10;
-    public static final double ARM_UP_VALUE = 0.7;
-    public static final double ARM_DOWN_VALUE = 0.5;
-  }
-
+    public static final double ARM_UP_VALUE = 0.5;
+    public static final double ARM_DOWN_VALUE = 0.3;
+  } 
+  
   public static final class ClimbConstants {
     public static final int CLIMB_MOTOR_ID = 7;
     public static final int CLIMB_MOTOR_CURRENT_LIMIT = 80;
