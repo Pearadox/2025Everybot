@@ -106,10 +106,8 @@ public class RobotContainer {
     // Pressing right bumper allows for full speed motion. Otherwise, the drivetrain
     // operates at half speed.
     driveSubsystem.setDefaultCommand(new DriveCommand(
-        () -> -driverController.getLeftY() *
-            (driverController.getHID().getRightBumperButton() ? -0.5 : -1),
-        () -> -driverController.getRightX() *
-            (driverController.getHID().getRightBumperButton() ? -0.6 : -1),
+        () -> driverController.getLeftY(),
+        () -> driverController.getRightX(),
         driveSubsystem));
 
 
@@ -120,7 +118,7 @@ public class RobotContainer {
         rollerSubsystem));
 
     armSubsystem.setDefaultCommand(new ArmCommand(
-        () -> 0.08,
+        () -> 0.125,
         () -> 0,
         armSubsystem));
 
