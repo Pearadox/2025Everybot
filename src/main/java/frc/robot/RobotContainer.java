@@ -107,9 +107,9 @@ public class RobotContainer {
     // operates at half speed.
     driveSubsystem.setDefaultCommand(new DriveCommand(
         () -> -driverController.getLeftY() *
-            (driverController.getHID().getRightBumperButton() ? -0.7 : -0.5),
+            (driverController.getHID().getRightBumperButton() ? -0.5 : -1),
         () -> -driverController.getRightX() *
-            (driverController.getHID().getRightBumperButton() ? -1 : -0.6),
+            (driverController.getHID().getRightBumperButton() ? -0.6 : -1),
         driveSubsystem));
 
 
