@@ -18,8 +18,10 @@ import frc.robot.commands.ArmCommand;
 import frc.robot.commands.ClimbCommand;
 import frc.robot.commands.DriveCommand;
 import frc.robot.commands.RollerCommand;
+import frc.robot.commands.SwerveDrive;
 import frc.robot.subsystems.DriveSubsystem;
 import frc.robot.subsystems.RollerSubsystem;
+import frc.robot.subsystems.drivetrain.Drivetrain;
 import frc.robot.subsystems.ArmSubsystem;
 import frc.robot.subsystems.ClimbSubsystem;
 
@@ -34,19 +36,21 @@ import frc.robot.subsystems.ClimbSubsystem;
  */
 public class RobotContainer {
   // The robot's subsystems
-  private final DriveSubsystem driveSubsystem = new DriveSubsystem();
+//   private final DriveSubsystem driveSubsystem = new DriveSubsystem();
   private final RollerSubsystem rollerSubsystem = new RollerSubsystem();
   private final ArmSubsystem armSubsystem = new ArmSubsystem();
   private final ClimbSubsystem climbSubsystem = new ClimbSubsystem();
 
+  private final Drivetrain drivetrain = Drivetrain.getInstance();
+
   // The driver's controller
-  private final CommandXboxController driverController = new CommandXboxController(
+  public final static CommandXboxController driverController = new CommandXboxController(
       OperatorConstants.DRIVER_CONTROLLER_PORT);
 
   // The autonomous chooser
   private final SendableChooser<Command> autoChooser = new SendableChooser<>();
   // Initializing autons
-  private final SimpleCoralAuton m_simpleCoralAuton = new SimpleCoralAuton(driveSubsystem, rollerSubsystem);
+//   private final SimpleCoralAuton m_simpleCoralAuton = new SimpleCoralAuton(driveSubsystem, rollerSubsystem);
 
   /**
    * The container for the robot. Contains subsystems, OI devices, and commands.
@@ -60,8 +64,8 @@ public class RobotContainer {
     // autoChooser.addOption
 
     // This auton hasn NOT been tested!
-    autoChooser.setDefaultOption("Simple Coral Auton", m_simpleCoralAuton);
-    SmartDashboard.putData(autoChooser);
+    // autoChooser.setDefaultOption("Simple Coral Auton", m_simpleCoralAuton);
+    // SmartDashboard.putData(autoChooser);
 
   }
 
@@ -105,10 +109,10 @@ public class RobotContainer {
     // joystick matches the WPILib convention of counter-clockwise positive.
     // Pressing right bumper allows for full speed motion. Otherwise, the drivetrain
     // operates at half speed.
-    driveSubsystem.setDefaultCommand(new DriveCommand(
-        () -> driverController.getLeftY(),
-        () -> driverController.getRightX(),
-        driveSubsystem));
+    // driveSubsystem.setDefaultCommand(new DriveCommand(
+    //     () -> driverController.getLeftY(),
+    //     () -> driverController.getRightX(),
+    //     driveSubsystem));
 
 
     // Set default commands of the subsystems to do nothing while not called
@@ -126,7 +130,7 @@ public class RobotContainer {
         () -> 0,
         () -> 0,
         climbSubsystem));
-    
+    drivetrain.setDefaultCommand(new SwerveDrive());
     }
 
     
